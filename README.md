@@ -1,1 +1,1 @@
-repeat the flush, delve into the database
+repeat the Flask, delve into the database
