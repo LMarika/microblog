@@ -6,7 +6,7 @@
             <td><img src="{{ user.avatar(128) }}"></td>
             <td><h1>User: {{ user.username }}</h1>
         {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
-        {% if user.last_seen %}<p>Последний вход: {{ user.last_seen }}</p>{% endif %}
+        {% if user.last_seen %}<p>Последний вход: {{ user.last_seen.strftime('%d.%m.%Y %H:%M') }}</p>{% endif %}
         <p>{{ user.followers_count() }} Подписчики, {{ user.following_count() }} Подписки.</p>
         {% if user == current_user %}
         <p><a href="{{ url_for('edit_profile') }}">Редактировать профиль</a></p>
@@ -29,7 +29,16 @@
         </tr>
     </table>
     <hr>
-    {% for post in posts %}
+   {% for post in posts %}
         {% include '_post.html' %}
     {% endfor %}
+
+    <nav aria-label="Post navigation">
+        {% if prev_url %}
+        <a href="{{ prev_url }}">Новые записи</a>
+        {% endif %}
+        {% if next_url %}
+        <a href="{{ next_url }}">Старые записи</a>
+        {% endif %}
+    </nav>
 {% endblock %}

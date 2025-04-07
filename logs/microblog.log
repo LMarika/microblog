@@ -1,4 +1,4 @@
-2025-03-28 12:39:26,938 ERROR: Exception on /user/susan [GET] [in C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py:875]
+2025-04-07 11:39:04,487 ERROR: Exception on /user/mari [GET] [in C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,9 +15,9 @@ Traceback (most recent call last):
   File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\PycharmProjects\flaskProject\app\routes.py", line 81, in user
-    return render_template('user.html', user=user, posts=posts)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mary\PycharmProjects\flaskProject\app\routes.py", line 94, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\templating.py", line 150, in render_template
     return _render(app, template, context)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,9 +33,19 @@ Traceback (most recent call last):
   File "C:\Users\Mary\PycharmProjects\flaskProject\templates\base.html", line 31, in top-level template code
     {% block content %}{% endblock %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\PycharmProjects\flaskProject\templates\user.html", line 16, in block 'content'
-    {{ form.hidden_tag() }}
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\jinja2\environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'form' is undefined
+  File "C:\Users\Mary\PycharmProjects\flaskProject\templates\user.html", line 11, in block 'content'
+    <p>Последний вход: {{ moment(user.last_seen).format('LLL') }}</p>
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\jinja2\utils.py", line 92, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'moment' is undefined
+2025-04-07 11:41:33,328 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:50]
+2025-04-07 11:42:06,497 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:50]
+2025-04-07 11:42:24,126 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:50]
+2025-04-07 11:43:14,367 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:50]
+2025-04-07 11:44:16,996 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:50]
+2025-04-07 11:44:32,513 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:50]
+2025-04-07 11:45:26,181 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:50]
+2025-04-07 11:45:44,785 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:50]
+2025-04-07 11:47:11,154 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:50]
