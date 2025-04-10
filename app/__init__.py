@@ -11,6 +11,8 @@ from flask_login import LoginManager
 from logging.handlers import RotatingFileHandler
 import os
 
+from flask_mail import Mail
+
 app_path = Path(".")
 template_path = app_path.parent / 'templates'
 
@@ -21,6 +23,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
+mail = Mail(app)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
