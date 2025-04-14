@@ -1,4 +1,4 @@
-2025-04-09 10:19:11,007 ERROR: Exception on /login [GET] [in C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py:875]
+2025-04-14 15:53:43,131 ERROR: Exception on /login [GET] [in C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,7 +12,7 @@ Traceback (most recent call last):
   File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\PycharmProjects\flaskProject\app\routes.py", line 57, in login
+  File "C:\Users\Mary\PycharmProjects\flaskProject\app\routes.py", line 59, in login
     return render_template('login.html', title='Sign In', form=form)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\templating.py", line 150, in render_template
@@ -27,82 +27,26 @@ Traceback (most recent call last):
     raise rewrite_traceback_stack(source=source)
   File "C:\Users\Mary\PycharmProjects\flaskProject\templates\login.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\Mary\PycharmProjects\flaskProject\templates\base.html", line 31, in top-level template code
+  File "C:\Users\Mary\PycharmProjects\flaskProject\templates\base.html", line 58, in top-level template code
     {% block content %}{% endblock %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\PycharmProjects\flaskProject\templates\login.html", line 24, in block 'content'
-    <p>Забыли пароль? <a href="{{ url_for('reset_password_request') }}">Восстановить</a> </p>
-    ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2025-04-09 10:19:14,362 ERROR: Exception on /login [GET] [in C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py:875]
-Traceback (most recent call last):
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\PycharmProjects\flaskProject\app\routes.py", line 57, in login
-    return render_template('login.html', title='Sign In', form=form)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\Mary\PycharmProjects\flaskProject\templates\login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\Mary\PycharmProjects\flaskProject\templates\base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
+  File "C:\Users\Mary\PycharmProjects\flaskProject\templates\login.html", line 8, in block 'content'
+    {{ form.username.label }} <label for="{{ from.username.id }}">Логин</label><br>
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\PycharmProjects\flaskProject\templates\login.html", line 24, in block 'content'
-    <p>Забыли пароль? <a href="{{ url_for('reset_password_request') }}">Восстановить</a> </p>
-    ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2025-04-09 10:23:24,634 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:23:51,521 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:24:34,325 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:24:34,397 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:24:34,397 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:27:01,234 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:27:01,281 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:27:01,281 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:29:49,438 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:54]
-2025-04-09 10:29:49,485 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:54]
-2025-04-09 10:29:49,485 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:54]
-2025-04-09 10:30:44,049 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:30:44,094 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:30:44,094 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:31:54,336 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:31:54,383 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:31:54,383 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:46:13,001 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:47:51,363 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
-2025-04-09 10:48:40,607 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+  File "C:\Users\Mary\AppData\Local\pypoetry\Cache\virtualenvs\flaskproject-m2ZFjxRD-py3.12\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'from' is undefined
+2025-04-14 15:55:24,969 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 15:55:42,669 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 15:55:59,747 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 15:56:20,245 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 15:56:51,979 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 15:59:34,714 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 16:00:03,598 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 16:01:12,829 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 16:02:13,864 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 16:06:44,559 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 16:09:20,692 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 16:16:28,985 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]
+2025-04-14 16:24:10,770 INFO: Microblog startup [in C:\Users\Mary\PycharmProjects\flaskProject\app\__init__.py:53]

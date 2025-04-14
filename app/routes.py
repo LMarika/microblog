@@ -1,22 +1,12 @@
-from flask import Flask, render_template, flash, redirect, url_for
-from app import app
-from app.forms import LoginForm
-from flask_login import current_user, login_user
-import sqlalchemy as sa
-from app import db
-from app.models import User
-from flask_login import logout_user
-from flask_login import login_required
-from flask import request
-from urllib.parse import urlsplit
-from app.forms import RegistrationForm
-from datetime import datetime, timezone
-from app.forms import EmptyForm
-from app.forms import PostForm
-from app.models import Post
-from app.forms import ResetPasswordForm
-from app.forms import ResetPasswordRequestForm
+from flask import Flask, render_template, flash, redirect, url_for, request
+from flask_login import current_user, login_user, logout_user, login_required
+from app import app, db
+from app.models import User, Post
+from app.forms import LoginForm, RegistrationForm, EmptyForm, PostForm, ResetPasswordForm, ResetPasswordRequestForm
 from app.email import send_password_reset_email
+from urllib.parse import urlsplit
+from datetime import datetime, timezone
+import sqlalchemy as sa
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
@@ -26,7 +16,7 @@ def index():
         post = Post(body=form.post.data, author=current_user)
         db.session.add(post)
         db.session.commit()
-        flash('Your post is now live!')
+        flash('Ваш пост отправлен!')
         return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
     posts = db.paginate(current_user.following_posts(), page=page,
@@ -75,7 +65,7 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        flash('Поздравляем, теперь вы зарегистрированный пользователь!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -128,14 +118,14 @@ def follow(username):
         user = db.session.scalar(
             sa.select(User).where(User.username == username))
         if user is None:
-            flash(f'User {username} not found.')
+            flash(f'Пользователь {username} не найден.')
             return redirect(url_for('index'))
         if user == current_user:
-            flash('You cannot follow yourself!')
+            flash('Вы не можете подписться!')
             return redirect(url_for('user', username=username))
         current_user.follow(user)
         db.session.commit()
-        flash(f'You are following {username}!')
+        flash(f'Вы подписались на {username}!')
         return redirect(url_for('user', username=username))
     else:
         return redirect(url_for('index'))
@@ -186,7 +176,7 @@ def reset_password_request():
             sa.select(User).where(User.email == form.email.data))
         if user:
             send_password_reset_email(user)
-        flash('Check your email for the instructions to reset your password')
+        flash('Проверьте свою электронную почту, чтобы получить инструкции по сбросу пароля')
         return redirect(url_for('login'))
     return render_template('reset_password_request.html',
                            title='Reset Password', form=form)
@@ -202,6 +192,6 @@ def reset_password(token):
     if form.validate_on_submit():
         user.set_password(form.password.data)
         db.session.commit()
-        flash('Your password has been reset.')
+        flash('Ваш пароль был сброшен.')
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
