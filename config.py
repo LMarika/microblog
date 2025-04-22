@@ -11,3 +11,4 @@ class Config:
   MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
   ADMINS = ['LMarika']
   POSTS_PER_PAGE = 10
+  LANGUAGES = ['en', 'ru', 'es']
